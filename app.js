@@ -6,6 +6,7 @@ var express	   = require('express'),
 mongoose.connect("mongodb://localhost/url_shortener");
 
 var app = express();
+app.set('port', (process.env.PORT || 3000));
 app.set('view engine','ejs');	
 app.set('views',__dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: true }));
