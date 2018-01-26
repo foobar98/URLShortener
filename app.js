@@ -3,7 +3,8 @@ var express	   = require('express'),
 	bodyParser = require('body-parser'),
 	random 	   = require('random-key');
 
-mongoose.connect("mongodb://localhost/url_shortener");
+// mongoose.connect("mongodb://localhost/url_shortener");
+mongoose.connect("mongodb://pranav:password@ds115768.mlab.com:15768/urlshortener");
 
 var app = express();
 app.set('port', (process.env.PORT || 3000));
