@@ -53,6 +53,9 @@ app.get('/:key',function(req,res){
 	});
 });
 
-app.listen(3000,function(){
-	console.log("Server started on port 3000");
+app.listen(app.get('port'), function () {
+	console.log('listening on port ' + app.get('port'));
 });
+// app.listen(3000,function(){
+// 	console.log("Server started on port 3000");
+// });
