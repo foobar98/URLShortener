@@ -1,6 +1,5 @@
 var express	   = require('express'),
 	mongoose   = require('mongoose'),
-	request    = require('request'),
 	bodyParser = require('body-parser'),
 	random 	   = require('random-key');
 
