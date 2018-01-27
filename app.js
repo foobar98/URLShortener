@@ -4,7 +4,8 @@ var express	   = require('express'),
 	random 	   = require('random-key');
 
 // mongoose.connect("mongodb://localhost/url_shortener");
-mongoose.connect("mongodb://pranav:password@ds115768.mlab.com:15768/urlshortener");
+mongoose.connect("mongodb://pranav:password@ds117178.mlab.com:17178/url_shortener");
+
 
 var app = express();
 app.set('port', (process.env.PORT || 3000));
