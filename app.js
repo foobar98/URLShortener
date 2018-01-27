@@ -6,9 +6,8 @@ var express	   = require('express'),
 // mongoose.connect("mongodb://localhost/url_shortener");
 mongoose.connect("mongodb://pranav:password@ds117178.mlab.com:17178/url_shortener");
 
-
 var app = express();
-app.set('port', (process.env.PORT || 3000));
+//app.set('port', (process.env.PORT || 3000));
 app.set('view engine','ejs');	
 app.set('views',__dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,19 +45,23 @@ app.post('/shorten',function(req,res){
 
 // Redirect to longURL
 app.get('/:key',function(req,res){
+	var short = req.params.key;
+	if(short.length!=5)
+		res.redirect('/');
 	Url.find({'shortUrl': req.params.key},function(err,url){
 		if(err)
 			console.log(err);
 		else{
+			//console.log(url);
 			var long = url[0]['longUrl'];
 			res.redirect(long);
 		}
 	});
 });
 
-app.listen(app.get('port'), function () {
-	console.log('listening on port ' + app.get('port'));
-});
-// app.listen(3000,function(){
-// 	console.log("Server started on port 3000");
+// app.listen(app.get('port'), function () {
+// 	console.log('listening on port ' + app.get('port'));
 // });
+app.listen(3000,function(){
+	console.log("Server started on port 3000");
+});
