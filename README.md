@@ -5,7 +5,7 @@ On opening the short URL, the original link is fetched from the database using t
 ## Steps to run the app
 ```
 1. clone this repo
-2. cd into this repo
+2. cd into this repo's directory
 3. run the following command to start the server - node app.js
 ```
 Open your favorite browser and go to https://localhost:3000/
